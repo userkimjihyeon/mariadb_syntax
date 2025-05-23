@@ -11,7 +11,7 @@ DROP DATABASE board;
 -- 스키마 목록 조회 (-> USE한 상태에서도 사용가능)
 show databases;
 
--- *스키마 선택 (MariaDB [(none)]> -> MariaDB [board]> 이렇게 바뀜)
+-- *스키마 선택 (MariaDB [(none)]> -> MariaDB [board]> 이렇게 바뀜. workbench는 볼드체로 변경됨)
 USE board;
 
 -- ->실습1
@@ -37,11 +37,11 @@ describe author;
 -- 테이블 생성명령문 조회
 show create table author;
 
--- posts테이블 신규 생성(id, title, contents, author_id)
+-- posts테이블 신규 생성(id, title, contents, author_id)    
 create table posts(id int primary key, title varchar(255), contents varchar(255), author_id int); 
 -> author_id가  nullable
 create table posts(id int, title varchar(255), contents varchar(255), author_id int not null, primary key(id), foreign key(author_id) references author(id));
--> not null, 조건 맨뒤에 넣기(pk,fk)
+-> not null, 복잡한 조건: 맨뒤에 넣기(pk,fk)
 
 -- 테이블 제약조건 조회
 select * from information_schema.key_column_usage where table_name='posts';

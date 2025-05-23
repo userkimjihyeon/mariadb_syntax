@@ -35,7 +35,6 @@ select * from author order by name desc, email asc; --name으로 먼저 정렬�
 
 
 -- 결과값 개수 제한
-select * from author order by limit 1; -- ->기본 pk로 asc정렬이기 때문에 id가 1인 행이 조회됨
 select * from author order by id desc limit 1;
 
 -- 별칭(alias)를 이용한 select
