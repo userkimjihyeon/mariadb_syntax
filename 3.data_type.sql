@@ -11,6 +11,8 @@ alter table author modify column id bigint; -- -> post테이블에서 fk이므�
 alter table author modify column id bigint primary key; -- -> multiple 에러 -> 이미 적용되어 있어서.. 그냥 빼고 하면 됨
 -- -> 흐름
 select 제약조건조회 -> fk설정(나중에 제약조건파트에서 다시배움. 그래서 실무에서 fk안씀.)
+    -- -> 조회: select * from information_schema.key_column_usage where table_name='posts';
+    -- -> 삭제: ALTER TABLE z_post DROP FOREIGN KEY z_post_ibfk_1;
 author테이블의 id -> bigint 변경
 post테이블의 id, author_id -> bigint 변경
 

@@ -6,7 +6,7 @@ update author set name="홍길동", email="hong100@naver.com" where id=3;
 -- select, from : 조회
 select 컬럼1, 컬럼2 from 테이블명;
 select name, email from author;
-select * from author;
+select * from author;   
 -- delete, from : 삭제
 delete from 테이블명 where 조건;
 delete from author where id=3;
@@ -19,6 +19,8 @@ select * from author where name='hongildong';
 select * from author where id>3;
 select * from author where id>2 and name='hong4';
 select * from author where id>2 or name='hong4';
+select * from author where id in (1, 3, 4);
+select * from post where author_id in (select id from author where name='hong4');
 
 -- 중복제거 조회 : distinct
 select name from author;
