@@ -1,4 +1,4 @@
--- 흐름제어 : case when, if, ifnull
+-- 흐름제어 : case when(분기처리 3개이상), if, ifnull
 -- if(a, b, c) : a조건이 참이면 b반환, 그렇지 않으면 c반환
 select id, if(name is null, '익명사용자', name) from author;    --> 안됨 ㅠㅠ name에 'anonymous' 적용해서그런듯,, -> 아니었음 NULL이 아니라 공백이어서 그랬음!!!
 
@@ -6,10 +6,10 @@ select id, if(name is null, '익명사용자', name) from author;    --> 안됨 
 select id, ifnull(name, '익명사용자') from author;
 
 select id,
-case 
+case
     when name is null then '익명사용자' 
     when name='hong7' then '홍길동'
-    else name                               -> else 생략가능능
+    else name                               -> else 생략가능
 end AS NAME
 from author;
 

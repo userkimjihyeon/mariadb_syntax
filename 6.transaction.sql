@@ -2,6 +2,7 @@
 alter table author add column post_count int default 0;
 
 -- post에 글쓴후에, author테이블의 post_count 컬럼에 +1을 시키는 트랜잭션 테스트
+  -- -> 번개모양아이콘 체크해제한 후 실습!
 start transaction;
 update author set post_count=post_count+1 where id = 2;
 insert into post(title, content, author_id) values("hello", "hello worlllld", 100);         -- -> 중간에 에러나면 위의 명령문까지 임시저장 (commit, rollback 가지도 않음)
@@ -24,8 +25,8 @@ begin
 end //
 DELIMITER ;
 
--- 프로시저 호출  -- -> CALL해야 임시저장상태에서 프로시저 실행됨
-CALL transaction_test();
+-- 프로시저 호출  -- -> CALL해야 임시저장상태에서 프로시저 실행됨 
+CALL transaction_test();    -- -> 대신 번개버튼 클릭해도됨
 
 -- 사용자에게 입력받는 프로시저 생성 -> CALL명령어 대신 UI로 입력받기 가능
 DELIMITER //
@@ -42,3 +43,5 @@ begin
     commit;
 end //
 DELIMITER ;
+
+
