@@ -142,7 +142,7 @@ select author_id, title, count(*) from post group by author_id, title;
 SELECT USER_ID, PRODUCT_ID
 FROM ONLINE_SALE 
 GROUP BY USER_ID, PRODUCT_ID
-HAVING COUNT(*) >= 2                        -- -> 1, 2번째 그룹핑한 컬럼의 count임
+HAVING COUNT(*) >= 2                        -- -> 1, 2번의 그룹핑한 컬럼의 count임
 ORDER BY USER_ID, PRODUCT_ID DESC;
 
 *셀프조인왜글행오?

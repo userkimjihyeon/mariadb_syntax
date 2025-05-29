@@ -20,8 +20,8 @@ select * from author where name='hong' and email='hongildong@naver.com';
 -- 이 경우 DB엔진에서 최적의 알고리즘 실행.
 select * from author where name='hong' and email='hongildong@naver.com';
 
--- index는 1컬럼 뿐만아니라, 2컬럼을 대상으로 1개의 index를 설정하는 것도 가능.
--- 이 경우 두컬럼을 and조건으로 조회해야만 index를 사용한다.
+-- 복합 인덱스 : index는 1컬럼 뿐만아니라, 2컬럼을 대상으로 1개의 index를 설정하는 것도 가능.
+-- 이 경우 두컬럼을 and조건으로 조회해야만 index를 사용한다. (X) -> 1컬럼으로만 조회 가능
 -- 복합 인덱스 생성
 create index 인덱스명 on 테이블명(컬럼1, 컬럼2);
 
