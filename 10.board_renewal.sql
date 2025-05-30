@@ -8,10 +8,16 @@ create table address(id bigint auto_increment, author_id bigint not null, countr
 create table post(id bigint auto_increment, title varchar(255) not null, contents varchar(10000), primary key(id));
 
 -- 연결 테이블 생성
-create table author_post(id bigint auto_increment, author_id bigint not null, post_id bigint not null, primary key(id), foreign key(author_id) references author(id), foreign key(post_id) references post(id));
+create table author_post(id bigint auto_increment, author_id bigint not null, post_id bigint not null, 
+primary key(id), 
+foreign key(author_id) references author(id), 
+foreign key(post_id) references post(id));
 
--- 복합키를 이용한 연결테이블생성
-create table author_post2(author_id bigint not null, post_id bigint not null, primary key(author_id, post_id), foreign key(author_id) references author(id), foreign key(post_id) references post(id));
+-- 복합키(pk가 2개)를 이용한 연결테이블생성
+create table author_post2(author_id bigint not null, post_id bigint not null, 
+primary key(author_id, post_id), 
+foreign key(author_id) references author(id), 
+foreign key(post_id) references post(id));
 
 
 -- *회원가입 및 주소생성

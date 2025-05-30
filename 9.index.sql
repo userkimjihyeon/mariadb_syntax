@@ -29,7 +29,7 @@ create index 인덱스명 on 테이블명(컬럼1, 컬럼2);
 create table author(id bigint auto_increment, email varchar(255), name varchar(255), primary key(id));
 
 -- index테스트 시나리오
--- 아래 프로시저를 통해 수십만건의 데이터 insert후에 index생성 전후에 따라 조회성능확인인
+-- 아래 프로시저를 통해 수십만건의 데이터 insert후에 index생성 전후에 따라 조회성능확인
 DELIMITER //
 CREATE PROCEDURE insert_authors()
 BEGIN
