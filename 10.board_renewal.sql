@@ -13,7 +13,7 @@ primary key(id),
 foreign key(author_id) references author(id), 
 foreign key(post_id) references post(id));
 
--- 복합키(pk가 2개)를 이용한 연결테이블생성
+-- 복합키(2개컬럼이 pk)를 이용한 연결테이블생성
 create table author_post2(author_id bigint not null, post_id bigint not null, 
 primary key(author_id, post_id), 
 foreign key(author_id) references author(id), 

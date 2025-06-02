@@ -3,7 +3,7 @@
 select * from mysql.user;
 
 -- 사용자생성
-create user 'jihyeon92'@'%' identified by '4321';       --> 도커db는 '%'써야함(원격접속)
+create user 'jihyeon92'@'%' identified by '4321';       --> 도커db는 localhost(이컴퓨터)대신 '%'써야함(원격접속)
 
 -- 사용자에게 권한부여
 grant select on board.author to 'jihyeon92'@'%';

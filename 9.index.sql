@@ -45,7 +45,7 @@ BEGIN
             INSERT INTO author (email) VALUES (email);
             SET i = i + 1;
         END WHILE;
-        COMMIT;
+        COMMIT;         -- -> *중간중간 commit해주어야 대량의 데이터를 넣을때 에러나지 않음.
         SET iteration = iteration + 1;
         DO SLEEP(0.1); -- 각 트랜잭션 후 0.1초 지연
     END WHILE;
